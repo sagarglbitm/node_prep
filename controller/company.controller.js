@@ -1,3 +1,7 @@
+
+
+
+
 const company_schema = require("../models/company.model.js");
 
 
@@ -16,6 +20,10 @@ const registerCompany=async(req,res)=>{
             name:companyName,
             userId:req._id
         })
+
+
+
+        
         return res.status(201).json({msg:"company is registered successfully",companyDetails})
 
     }

@@ -18,6 +18,10 @@ app.use(cookieParser());
 const corsOptions={
     origin:"http://localhost:5173",
     Credentials:true
+
+
+
+    
 }
 app.use(cors(corsOptions))
 
@@ -30,7 +34,7 @@ app.use('/company',companyRouter)
 
 // stream
 app.get( '/stream',(req,res)=>{
-    const stream=fs.createReadStream('filename','utf-8')
+    const stream=fs.createReadStream('filename.txt','utf-8')
     stream.on('data',(chunk)=>res.write(chunk))
     stream.on('end',()=>res.end())
 })

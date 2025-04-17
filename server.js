@@ -1,3 +1,8 @@
+
+
+// to create a multi-process Express server, allowing it to handle more traffic by distributing the load across all available CPU cores.
+
+const express=require("express")
 const cluster=require('cluster')
 
 // by using os module ,we can get the no of cpu core avialbel
@@ -20,5 +25,5 @@ else{
         return res.json({msg :`heelo from express server ${process.pid}`})
     })
 
-    app.listen(300,()=>console.log('server stared '))
+    app.listen(300,()=>console.log(`server stared ${process.pid}`))
 }
